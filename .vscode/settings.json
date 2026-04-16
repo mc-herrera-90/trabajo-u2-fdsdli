@@ -1,0 +1,6 @@
+{
+  "markdown-pdf.outputDirectoryRelativePathFile": true,
+  "markdown-pdf.outputDirectory": "docs",
+  "markdown-pdf.styles": ["assets/style.css"],
+  "markdown-pdf.headerTemplate": "&nbsp"
+}
