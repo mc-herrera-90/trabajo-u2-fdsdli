@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>informe.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file://c:\Users\Benjamín Caba\trabajo-u2-fdsdli\assets\style.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div class="portada">
+<p><img src="assets/logo.png" alt="Logo"></p>
+<h1 id="caso-de-estudio">Caso de estudio</h1>
+<h2 id="operación-cadena-fría--logística-austral-ltda">Operación cadena Fría | Logística Austral Ltda.</h2>
+<p><strong>Marco Contreras</strong><br>
+  <a href="mailto:marco.contreras11@inacapmail.cl">marco.contreras11@inacapmail.cl</a></p>
+<p><strong>Benjamín Caba</strong><br>
+  <a href="mailto:benjamin.caba@inacapmail.cl">benjamin.caba@inacapmail.cl</a></p>
+<br/>
+<p><strong>Docente</strong>: Marcos Nathanael Rodríguez Cerda</p>
+</div>
+<div class="page" />
+<h2 id="contexto-del-caso">Contexto del caso</h2>
+<h3 id="antecedentes-adicionales">Antecedentes adicionales</h3>
+<ul>
+<li>Al momento del indicente, no se había implementado cifrado en las bases de datos, y los accesos mediante VPN estaban usando únicamente usuario y contraseña <strong>sin doble factor autenticación</strong> (MFA)</li>
+</ul>
+<div class="page" />
+<h2 id="preguntas">Preguntas</h2>
+<h3 id="1-el-ingreso-a-los-sistemas-de-logística-austral-fue-ilegal">1. ¿El ingreso a los sistemas de Logística Austral fue ilegal?</h3>
+<p>En el marco de la <strong>Ley N°21.459</strong> (PUB: 20/06/2022 que establece normas sobre delitos informáticos) se considera un <strong>&quot;Acceso ilícito&quot;</strong> mediante la obtención de credenciales a través de técnicas miliciosas como instalar un Keylogger y acceder a través del método de &quot;Backdoor&quot;.</p>
+<div class="page"/>
+<h3 id="2-se-configura-como-acceso-ilícito-a-un-sistema-informático-según-la-ley">2. ¿Se configura como &quot;acceso ilícito a un sistema informático&quot; según la ley?</h3>
+<p>En el marco de la <strong>Ley N°21.459</strong> (PUB: 20/06/2022 que establece normas sobre delitos informáticos) se considera un <strong>&quot;Acceso ilícito&quot;</strong> mediante la obtención de credenciales a través de técnicas miliciosas como instalar un Keylogger y acceder a través del método de &quot;Backdoor&quot;.</p>
+<p align="center">
+<img src="assets/ley-21459-art2.png" width="50%">
+</p>
+<p>El artículo también establece un excepción a la responsabilidad penal, condicionada al cumplimiento de una serie de numerales dentro del inciso correspondiente.</p>
+<p align="center">
+<img src="assets/causales-art2.png" width="80%">
+</p>
+<p>En el caso del atacante, no cumpliría ninguna de las condiciones establecidas, ya que no está registrado en la ANCI, no fue coordinado con Austral, no informó a las autoridades y tuvo intenciones de cometer el ilícito.</p>
+<h3 id="3-puede-imputarse-penalmente-la-instalación-del-malware-tipo-keylogger-y-backdoor">3. ¿Puede imputarse penalmente la instalación del malware tipo keylogger y backdoor?</h3>
+<p>Tanto un <em>keylogger</em> como el método de <em>backdoor</em> (entrar a un sistema sin pasa por la autenticación normal) estan relacionados con delitos de la Ley 21.459.</p>
+<p>Lo que respecta a la Ley de protección de datos personales <strong>N°19.628</strong> el <em>Keylogger</em> está vulnerando esta ley, porque está recolectando información sensible sin autorización.</p>
+<h3 id="4-qué-artículo-sanciona-esta-conducta">4. ¿Qué artículo sanciona esta conducta?</h3>
+<p>Primero, sabemos los antecedentes de que la conducta maliciosa del atacante fue instalar programas como <em>keyloggers</em> para así implementar un método de acceso <em>backdoor</em>.</p>
+<p>El <strong>artículo 3</strong> de la <strong>Ley 21.459</strong> sanciona directamente esta conducta.</p>
+<blockquote>
+<p>&quot;El que indebidamente intercepte, interrumpa o interfiera, por medios técnicos, la transmisión no pública de la información en un sistema informático&quot;</p>
+</blockquote>
+
+</body>
+</html>
