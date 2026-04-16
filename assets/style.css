@@ -1,4 +1,60 @@
+:root {
+  --secondary: #b40000;
+}
+h2, h3, h4 {
+    font-weight: bolder;
+    color: var(--secondary, #b40000);
+}
+
 .slide h2 {
     font-size: 3rem;
-    font-weight: bolder;
+}
+/* PORTADA */
+.portada {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 45%;
+	padding: 0 1.5rem;
+	border-radius: 8px;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.portada img {
+    width: 70%;
+}
+
+/* BLOCKQUOTE */
+blockquote,
+.quote {
+    border-left: 5px solid var(--secondary);
+    background-color: #fdf2f2;
+    position: absolute;
+    padding: .1rem 1rem;
+    padding-left: 1.7rem;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    color: darkred;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+blockquote::before,
+.quote::before {
+    position: absolute;
+    top: 50%;
+    color: var(--secondary);
+    left: 3px;
+    left: 3px;
+    transform: translateY(-50%);
+/* content: "\f249 \00a0 \00a0"; */
+    content: "📌";
+    font-weight: 900; /* necesario para íconos sólidos */
+    display: inline-block;
+    font-size: 0.9rem;
+    text-align: center;
+    z-index: 999;
 }

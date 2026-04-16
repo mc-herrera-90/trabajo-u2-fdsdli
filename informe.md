@@ -54,3 +54,11 @@ En el caso del atacante, no cumpliría ninguna de las condiciones establecidas, 
 Tanto un _keylogger_ como el método de _backdoor_ (entrar a un sistema sin pasa por la autenticación normal) estan relacionados con delitos de la Ley 21.459.
 
 Lo que respecta a la Ley de protección de datos personales __N°19.628__ el _Keylogger_ está vulnerando esta ley, porque está recolectando información sensible sin autorización.
+
+### 4. ¿Qué artículo sanciona esta conducta?
+
+Primero, sabemos los antecedentes de que la conducta maliciosa del atacante fue instalar programas como _keyloggers_ para así implementar un método de acceso _backdoor_.
+
+El __artículo 3__ de la __Ley 21.459__ sanciona directamente esta conducta.
+
+> "El que indebidamente intercepte, interrumpa o interfiera, por medios técnicos, la transmisión no pública de la información en un sistema informático"
