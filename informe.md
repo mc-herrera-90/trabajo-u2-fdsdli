@@ -228,29 +228,54 @@ Los fallos de seguridad que permitieron el ataque fueron:
 
 A lo anterior se suman fallos organizativos: no se implementaron los protocolos de la **Ley N° 21.663** (reportes a la ANCI en 3 y 72 horas), no hubo auditorías en 18 meses, las capacitaciones en ciberseguridad no eran periódicas (lo que facilitó el error humano del smishing), y la empresa no notificó a las autoridades ni a los usuarios afectados, argumentando que aún evaluaba el alcance.
 
+---
+
 ### 9. ¿Existían políticas de control de acceso y cifrado de datos?
 
 Haciendo énfasis en la pregunta anterior, la empresa no contaba con políticas de control de acceso y cifrado de datos formales que regulen el acceso a información sensible y la protección de datos en tránsito y reposo. Debido a la falta de presencia de los métodos mencionados, se le facilitó la entrada ilícita del atacante al sistema informático, además de irrumpir el funcionamiento normal de este y la filtración de datos.
 
+En consecuencia, la empresa no cumplió con los deberes de seguridad establecidos en la **Ley N° 21.663** (Ley Marco de Ciberseguridad) ni con el **Artículo 1° de la Ley N° 21.459**, que regula los deberes de resguardo de datos personales. Adicionalmente, la empresa omitió reportar el incidente a la ANCI dentro de los plazos máximos de 3 y 72 horas, agravando su responsabilidad legal.
+
+---
+
+
 ### 10. ¿Se cumplían los estándares mínimos de ciberseguridad exigidos por la ley?
 
-Logística Austral Ltda. no cumplía con los estándares mínimos de ciberseguridad exigidos por las __leyes N° 21.459, N° 19.628 y los estándares ISO/IEC 27001__. --porque durante el ataque no se han protegido los datos de los clientes, tampoco la integridad del sistema y no se han seguido las cláusulas del SGSI para controlar el problema.--
+Logística Austral Ltda. no cumplía con los estándares mínimos de ciberseguridad exigidos por las __leyes N° 21.459, N° 19.628 y los estándares ISO/IEC 27001__. porque durante el ataque no se han protegido los datos de los clientes, tampoco la integridad del sistema y no se han seguido las cláusulas del SGSI para controlar el problema.
 
 ### 11. ¿La empresa realizaba auditorías de seguridad periódicas?
 
-Según el relato del caso, la empresa no realizaba auditorías de seguridad periódicas, la última auditoría notificada y registrada fue hace 18 meses (1 año y 6 meses).
+No, no existían auditorías periódicas ni una política formal de revisión de seguridad de sistemas y bases de datos.
+
+La propia historia del caso indica que la empresa **no realizó auditorías de seguridad en los últimos 18 meses**. Se trata de una carencia documental y procedimental total: no solo no se ejecutaban las auditorías, sino que tampoco existía una política documentada que regulara su frecuencia, alcance o metodología.
+
+Logística Austral, al gestionar la "última milla" de medicamentos críticos (vacunas, insumos oncológicos), califica como **Operador de Importancia Vital (OIV)** en el sector salud conforme a la **Ley N° 21.663 (Ley Marco de Ciberseguridad)**. Como OIV, la ley le exige **someterse a revisiones periódicas para demostrar que sus defensas son reales y no solo "papel"**, así como implementar un **Sistema de Gestión de Seguridad de la Información (SGSI)** basado en una práctica continua. La ausencia total de auditorías constituye una **infracción grave** a la Ley N° 21.663, sancionable con multas de hasta 10.000 UTM.
+
+---
 
 ### 12. ¿Existía un plan de respuesta ante incidentes?
 
-La organización no contaba con un plan de respuesta formal ante incidentes, en el relato menciona que la empresa solo se excusó de _evaluar el alcance del ataque_ y no notificó a las autoridades sobre el incidente.
+**No, no existía un plan de respuesta a incidentes.** La empresa actuó de forma reactiva: no detectó el malware, no aisló el equipo comprometido, no contuvo el movimiento lateral ni la exfiltración. Tampoco notificó a la ANCI dentro de las 3 horas posteriores al ataque (incumpliendo la Ley N° 21.663), argumentando que "aún evaluaba el alcance". Sin un plan formal, la respuesta fue tardía e ineficaz.
+
+<p align="center">
+<img src="assets/sectores-sujetos-a-ley-21663.png" width="100%">
+</p>
+
+En conclusión, Logística Austral no contaba con un plan de respuesta a incidentes y su reacción fue tardía e ineficaz, incumpliendo gravemente sus obligaciones legales como Operador de Importancia Vital.
+
+<div class="page"/>
 
 ### 13. ¿Cómo debería responder la empresa ante el incidente según la ley?
 
 Según los __Artículos 4, 9, 27 y 32__ de la __Ley N° 21.663__, la empresa debería responder con reportes inmediatos del incidente con un plazo obligatorio de _3 horas desde que se tiene en conocimiento_. _Dentro de 72 horas posterior_ a la primera notificación, se debe _entregar una actualización_ que incluye la evaluación inicial del incidente, su gravedad e impacto, debe incluir indicadores de compromiso (si están disponibles). Finalmente, si la empresa es considerada Operador de Importancia Vital, deben entregar en un _plazo máximo de 15 días_ un informe detallado sobre el incidente, incluyendo gravedad e impacto, el tipo de amenaza que se presentó, las medidas de mitigación aplicadas y en curso, y si procede se deben mencionar las repercusiones transfronterizas.
 
+---
+
 ### 14. ¿Qué acciones urgentes debe tomar para contener el daño?
 
 Como propuesta(s) urgentes para la empresa, se debe aislar el/los sistema(s) afectados desconectando físicamente los equipos comprometidos, aislar el/los servidor(es), backups realizados y bases de datos. También se recomienda preservar la(s) evidencia(s) para la colaboración de la investigación, realizar análisis forenses, notificar a las autoridades correspondientes (CSIRT Nacional) junto a los clientes y socios sobre el ataque detectado, además de implementar nuevas medidas de seguridad como recomendar cambiar de contraseña a una más robusta.
+
+---
 
 ### 15. ¿A qué autoridades debe notificar?
 
@@ -302,3 +327,6 @@ Para prevenir incidentes similares, las organizaciones deben implementar control
 
 Asimismo, resulta indispensable contar con un plan formal de respuesta a incidentes que permita contener el ataque, evaluar el impacto y ejecutar procesos de notificación según las obligaciones establecidas en la norma aplicable. Finalmente, estas medidas deben complementarse con el cumplimiento de la legislación nacional vigente, asegurando una gestión integral de la seguridad de la información y la protección en contextos tanto locales como internacionales.
 
+<p align="center">
+<img src="assets/agujeros-de-logistica-austral.png" width="98%">
+</p>
