@@ -96,11 +96,13 @@ También a esto se le aplica el Código Penal, específicamente el delito de Est
 
 ### 2. ¿Se configura como "acceso ilícito a un sistema informático" según la ley?
 
-Sí, según el caso, el acceso del atacante configura acceso ilícito a un sistema informático en el marco de la __Ley N°21.459__ (Artículo 2), al ingresar sin autorización mediante credenciales obtenidas con técnicas miliciosas como instalar un Keylogger.
+Sí, según el caso, el acceso del atacante configura acceso ilícito a un sistema informático en el marco de la __Ley N°21.459__ (Artículo 2), al ingresar sin autorización mediante credenciales obtenidas con técnicas miliciosas (instalación de un _Keylogger_).
 
-<p align="center">
-<img src="assets/ley-21459-art2.png" width="50%">
-</p>
+:::row center
+<img src="assets/ley-21459-art2.png" width="45%">
+
+<img src="assets/uso-de-keylogger.png" width="55%">
+:::
 
 El artículo también establece una excepción a la responsabilidad penal, condicionada al cumplimiento de una serie de numerales dentro del inciso correspondiente. Sin embargo, en el caso del atacante, **no cumpliría ninguna de las condiciones establecidas**, ya que no está registrado en la ANCI, no fue coordinado con Logística Austral, no informó a las autoridades y tuvo intenciones de cometer el ilícito.
 
@@ -108,6 +110,7 @@ El artículo también establece una excepción a la responsabilidad penal, condi
 <img src="assets/causales-art2.png" width="80%">
 </p>
 
+<div class="page"/>
 
 ### 3. ¿Puede imputarse penalmente la instalación del malware tipo keylogger y backdoor?
 
@@ -164,7 +167,31 @@ Ahora, el simple acceso y copia no autorizada constituyen una afectación releva
 <img src="assets/copia-de-datos-sketch.png" width="95%">
 </p>
 
----
+::::row
+:::insise
+### Confidencialidad 
+Asegura que solo las personas autorizadas accedan a la información.
+
+**Daño asociado:**
+Ocurre cuando hay filtración de datos, robo de contraseñas o acceso no autorizado a archivos privados.
+:::
+:::insise
+### Integridad 
+
+Garantiza que la información sea exacta y no haya sido alterada sin autorización.
+
+**Daño asociado:**
+Se produce cuando se modifican registros bancarios, se altera el código de un software o se eliminan archivos críticos de forma malintencionada.
+:::
+:::insise
+### Disponibilidad
+
+Garantiza que los datos y sistemas estén accesibles cuando se necesiten.
+
+**Daño asociado:**
+Se ve afectada cuando ocurren ataques de denegación de servicio (DDoS), infecciones por ransomware.
+:::
+::::
 
 ### 7. ¿El correo exigiendo criptomonedas constituye “extorsión”?
 
@@ -182,9 +209,24 @@ En este caso, la extorsión se agrava por la naturaleza de la información amena
 <img src="assets/art438-codigo-penal.png" width="95%">
 </p>
 
+<div class="page"/>
+
 ### 8. ¿Qué fallos de seguridad permitieron el ataque?
 
-Dentro de la empresa, nunca se implementaron distintos métodos de seguridad para proteger tanto la _integridad del sistema_ como la _información sensible almacenada_, asímismo, faltaban los protocolos a seguir según la __Ley N° 21.663__ como entregar los reportes a la __ANCI__, detallando el ataque detectado, las medidas de seguridad practicadas y un informe sobre los efectos negativos que tuvo la empresa. Entre ellas, tampoco se detectaron _segmentaciones en el servidor_, lo que hace que cualquier usuario tenga _privilegios excesivos_, además de acceder al sistema sin la _autentificación de doble factor_. Las _capacitaciones sobre seguridad_ no se realizaban periódicamente, no se realizaron _auditorías_ en los __últimos 18 meses__ y finalmente la empresa tampoco notificó a las autoridades ni a los usuarios sobre el ataque, el argumento que entregaron es que todavía estaban evaluando su alcance.
+Dentro de la empresa, nunca se implementaron distintos métodos de seguridad para proteger los sistemas.
+
+Los fallos de seguridad que permitieron el ataque fueron:
+
+1. **Error humano:** El supervisor hizo clic en un SMS falso (smishing) e ingresó sus credenciales.
+2. **Falta de MFA:** No había autenticación de dos factores para la VPN.
+3. **Ausencia de segmentación de red:** La red administrativa y la de operaciones no estaban separadas, permitiendo movimiento lateral.
+4. **Privilegios excesivos:** La cuenta del supervisor tenía acceso a servidores centrales y datos sensibles.
+5. **Antivirus insuficiente:** No detectó la instalación del keylogger y backdoor.
+6. **Falta de monitoreo:** La exfiltración de 45 GB no generó alertas.
+7. **Sin control de aplicaciones:** El equipo permitió instalar software malicioso.
+8. **Inexistencia de respuesta a incidentes:** No se aisló el equipo comprometido a tiempo.
+
+A lo anterior se suman fallos organizativos: no se implementaron los protocolos de la **Ley N° 21.663** (reportes a la ANCI en 3 y 72 horas), no hubo auditorías en 18 meses, las capacitaciones en ciberseguridad no eran periódicas (lo que facilitó el error humano del smishing), y la empresa no notificó a las autoridades ni a los usuarios afectados, argumentando que aún evaluaba el alcance.
 
 ### 9. ¿Existían políticas de control de acceso y cifrado de datos?
 
