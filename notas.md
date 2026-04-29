@@ -5,3 +5,5 @@
 Para convertir a pdf:
 
 CTRL + SHIFT P => Escribe "MarkdownPDF" => "Export to PDF"
+
+abuselpdb -> eva3
