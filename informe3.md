@@ -1,4 +1,4 @@
-::portada
+:::portada
 ![Logo](assets/logo.png)
 # Caso de estudio
 ## SecureLogistics S.A
@@ -15,6 +15,19 @@ __Docente__: Marcos Nathanael Rodríguez Cerda
 :::
 
 <div class="page" />
+
+## Contexto del caso
+
+El área de seguridad a dejado accesible deliberadamente un servidor de contingencia con __Ubuntu 24.04 LTS__ hacia internet con el fin de auditar la postura de defensa externa. Este servidor está enlazado a la consola de __Wazuh SIEM__.
+
+
+### Datos para ingresar a la consola de administración de Wazuh
+
+- __IP__: `https://172.234.205.157/`
+- __Usuario__: `usuario6`
+- __Password__: `**********`
+
+---
 
 ## I. Arquitectura y Responsabilidad
 

@@ -1,0 +1,14 @@
+servidor wazuh: https://172.234.205.157/
+
+Usuario: analista1  |  Contraseña: LCSfpuzeO1DHjI
+Usuario: analista2  |  Contraseña: AXvWL+uqdnxDsf
+Usuario: analista3  |  Contraseña: mOH_c8fR4_tOfd
+Usuario: analista4  |  Contraseña: LU#!28LHUIbFZm
+Usuario: analista5  |  Contraseña: yZ4bZ@w_0vRR17
+Usuario: analista6  |  Contraseña: CgJO+8Ly4LHw93
+Usuario: analista7  |  Contraseña: fSLQg3UQK05822
+Usuario: analista8  |  Contraseña: EeIKGj5Ui4gFPN
+Usuario: analista9  |  Contraseña: sKr5TUo7+YZKUo
+Usuario: analista10  |  Contraseña: #pSYtIed6QWaTe
+Usuario: analista11  |  Contraseña: IMuQ+tZlILZ7q@
+Usuario: analista12  |  Contraseña: di1fA9eJyZzMwt
