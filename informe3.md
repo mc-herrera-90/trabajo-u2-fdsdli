@@ -24,7 +24,7 @@ El área de seguridad a dejado accesible deliberadamente un servidor de continge
 ### Datos para ingresar a la consola de administración de Wazuh
 
 - __IP__: `https://172.234.205.157/`
-- __Usuario__: `usuario6`
+- __Usuario__: `usuario8`
 - __Password__: `**********`
 
 ---
