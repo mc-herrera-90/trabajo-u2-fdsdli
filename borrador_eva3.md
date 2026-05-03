@@ -68,19 +68,28 @@ Empleando la siguiente tabla, el grupo delimitará las responsabilidades técnic
 | **Alcance** | Todas las bases de datos de laboratorios farmacéuticos y repositorios de información almacenados en la plataforma logística central. |
 | **Control Técnico** | Ejecución de respaldos automatizados con una frecuencia estrictamente alineada al RPO definido, almacenados en una ubicación de Disaster Recovery aislada de la red principal. |
 
-Mapeo NIST CSF v2.0 __BASE__
+**Mapeo NIST CSF v2.0** 
 
-| Control Propuesto | Función NIST CSF | Justificación de la Clasificación |
+
+A continuación, se vinculan los hallazgos técnicos detectados en Wazuh con las funciones y categorías del framework NIST para demostrar la alineación con estándares internacionales:
+
+| Función NIST | Categoría / Subcategoría | Hallazgo Técnico Relacionado (Wazuh / RCA) |
 | :--- | :--- | :--- |
-| Implementación de un Firewall de Aplicaciones Web (WAF) | Proteger (PR) | Actúa como una barrera defensiva para bloquear tráfico malicioso antes de que llegue al servidor Ubuntu. |
-| Monitoreo de alertas 24/7 con el SIEM Wazuh | Detectar (DE) | Permite identificar anomalías en tiempo real y accesos no autorizados en la plataforma. |
-| Ejecución de respaldos automatizados en Cloud DR | Recuperar (RC) | Permite restaurar los servicios logísticos y datos médicos tras un incidente para cumplir con el RTO. |
+| **IDENTIFICAR (ID)** | **Gestión de Riesgos (ID.RA):** Las vulnerabilidades son identificadas y documentadas. | Identificación de un Score de cumplimiento del 49% y 119 fallas de configuración en el servidor Ubuntu (Agente 002). |
+| **PROTEGER (PR)** | **Seguridad de la Plataforma (PR.PS):** Se implementan configuraciones de endurecimiento (Hardening). | Fallas en las reglas SCA 35510, 35512 y 35513 relacionadas con la falta de restricciones (`noexec`) en el directorio `/tmp`. |
+| **PROTEGER (PR)** | **Control de Acceso (PR.AC):** El acceso a activos está limitado a usuarios autorizados. | Exposición del puerto 22 (SSH) con permisos de login para `root` mediante contraseña, facilitando ataques de fuerza bruta. |
+| **DETECTAR (DE)** | **Análisis de Eventos Adversos (DE.AE):** Se detectan anomalías y eventos para comprender su impacto. | Detección masiva (2.107 alertas) de intentos de autenticación fallidos (Reglas 5551, 5712, 2502) provenientes de IPs en Alemania y Rumania. |
+| **RESPONDER (RS)** | **Gestión de Incidentes (RS.MA):** El plan de respuesta se ejecuta una vez detectado el incidente. | Ejecución del Playbook de respuesta operativa para el bloqueo de IPs maliciosas y remediación de configuraciones en `/etc/fstab`. |
+| **RECUPERAR (RC)** | **Mejora de la Resiliencia (RC.RP):** Las actividades de recuperación se ejecutan para restaurar activos. | Planificación de un nuevo escaneo SCA post-mitigación para validar la mejora del Score de seguridad y la erradicación de las vulnerabilidades. |
 
-## V. Resiliencia y Disaster Recovery
+## V. Plan de Tratamiento y Mitigación de Riesgos
 
-| Métrica | Valor (Tiempo) | Justificación Financiera y Operativa |
-| :--- | :--- | :--- |
-| RTO (Recovery Time Objective) | 7 minutos | Si no se controla a tiempo (en minutos y máximo una hora) habrán pérdidas de $15.000 USD por hora y la medicina oncológica queda en riesgo logístico |
-| RPO (Recovery Point Objective) | 2 minutos | Cada backup debe realizarse cada cierta cantidad mínima de minutos para no perder información crítica. |
+A continuación, se presenta el plan de acción para abordar las vulnerabilidades y amenazas detectadas durante el análisis del servidor Ubuntu-Server (Agente 002):
+
+| Hallazgo / Riesgo Identificado | Acción de Mitigación (Control Propuesto) | Responsable | Prioridad / Plazo |
+| :--- | :--- | :--- | :--- |
+| **Ataque masivo de fuerza bruta vía SSH** (Alertas 5551, 5712) | Deshabilitar el inicio de sesión para el usuario `root` y obligar la autenticación mediante llaves SSH (RSA/Ed25519) en `sshd_config`. Implementar Fail2Ban. | Administrador de Red / TI | **Crítica (Inmediato)** |
+| **Falta de restricciones en el directorio `/tmp`** (SCA 35510, 35512, 35513) | Editar el archivo `/etc/fstab` para montar la partición temporal con los parámetros de seguridad `noexec`, `nodev` y `nosuid`. | Administrador de Servidores | **Alta (Corto Plazo)** |
+| **Paso a producción sin Hardening** (Score SCA del 49%) | Implementar una política de validación DevSecOps que exija un cumplimiento mínimo del 80% en los estándares CIS Benchmarks antes de exponer un servidor a la WAN. | CISO / Gerencia TI | **Media (Mediano Plazo)** |
 
 Teniendo en cuenta las severas penalizaciones financieras y operativas a las que se enfrenta SecureLogistics S.A., se propone el uso de un Hot Site. Esta estrategia permite una conmutación por error en cuestión de segundos, garantizando que la empresa cumpla estrictamente con su agresivo RTO de 7 minutos y protegiendo así la integridad de los medicamentos oncológicos.
