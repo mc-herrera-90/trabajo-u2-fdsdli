@@ -53,7 +53,7 @@ blockquote::before,
     left: 3px;
     transform: translateY(-50%);
 /* content: "\f249 \00a0 \00a0"; */
-    content: "📌";
+    content: "📍";
     font-weight: 900; /* necesario para íconos sólidos */
     display: inline-block;
     font-size: 0.9rem;
@@ -97,4 +97,13 @@ hr::after {
 
 table {
   border: 2px solid black;
+}
+
+strong code {
+  color: var(--secondary) !important;
+}
+
+thead {
+  background-color: var(--secondary);
+  color: #fff;
 }
