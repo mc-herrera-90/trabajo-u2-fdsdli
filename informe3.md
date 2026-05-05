@@ -142,30 +142,33 @@ Tener claras estas responsabilidades no es un detalle menor. Un error en la conf
 **Incidente seleccionado (Threat Hunting):**
 
 <p align="center">
-<img src="assets/wazuh/cantidad-de-intentos-de-de-autenticacion-fallida-ssh.png" width="100%"><br/>
+<img src="assets/wazuh/cantidad-de-intentos-de-de-autenticacion-fallida-ssh.png" width="97%"><br/>
 <small><strong>Figura 4.</strong> Intentos masivos de autenticación fallida contra SSH ( 3.109 eventos registrados )</small>
 </p>
 
 
 :::row
 <p align="center">
-<img src="assets/wazuh/item0_35510.png" width="95%">
+<img src="assets/wazuh/item0_35510.png" width="93%">
 </p>
 
 <p align="center">
-<img src="assets/wazuh/item0_35512.png" width="95%">
+<img src="assets/wazuh/item0_35512.png" width="93%">
 </p>
 :::
+
+<small style="display: block; text-align: center"><strong>Figura 5.</strong> Evidencia de vulnerabilidades en el directorio <strong>/tmp</strong></small>
 
 :::row
 <p align="center">
-<img src="assets/wazuh/item0_35513.png" width="95%">
+<img src="assets/wazuh/item0_35513.png" width="93%">
 </p>
 
 <p align="center">
-<img src="assets/wazuh/item0_failed.png" width="95%">
+<img src="assets/wazuh/item0_failed.png" width="93%">
 </p>
 :::
+
 
 Directorio __`/tmp`__ sin particionamiento aislado ni restricciones de ejecución (_noexec_, _nosuid_), evaluado con fallos en las Reglas SCA 35510, 35512 y 35513.
 
