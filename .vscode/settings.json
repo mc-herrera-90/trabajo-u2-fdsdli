@@ -4,5 +4,6 @@
   "markdown-pdf.styles": ["assets/style.css"],
   "markdown-pdf.width": "800px",
   "markdown-pdf.height": "1200px",
-  "markdown-pdf.headerTemplate": "&nbsp"
+  "markdown-pdf.headerTemplate": "&nbsp",
+  "markdown.extension.toc.updateOnSave": false,
 }
