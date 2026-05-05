@@ -1,11 +1,10 @@
-## VI. Playbook de Respuesta Operativa (Anexo Detallado)
+## Playbook de Respuesta Operativa
 
 **Caso:** SecureLogistics S.A.
+
 **Amenaza analizada:** Intrusión por Fuerza Bruta SSH y Riesgo de Ejecución de Código en `/tmp`.
-**Agente Afectado:** 002 (Ubuntu-Server)
 
-
-Intrusión por Fuerza Bruta SSH y Riesgo de Ejecución de Código en _/tmp_.
+**Agente Afectado:** 002 (Ubuntu-Server) -> Intrusión por Fuerza Bruta SSH y Riesgo de Ejecución de Código en _/tmp_.
 
 | Etapa del Playbook | Indicaciones Técnicas a Ejecutar |
 | :--- | :--- |
