@@ -107,3 +107,11 @@ thead {
   background-color: var(--secondary);
   color: #fff;
 }
+
+.toc a {
+  color: var(--secondary);
+}
+
+.toc {
+  line-height: 1.6rem;
+}
